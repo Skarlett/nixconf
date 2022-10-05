@@ -14,7 +14,7 @@
     nixosConfigurations = {
       vps = nixpkgs.lib.nixosSystem {
         pkgs = legacyPackages.x86_64-linux;
-        specialArgs = { inherit inputs; }; # Pass flake inputs to our config
+        specialArgs = inputs;
         modules = [ ./configuration.nix ];
       };
     };
